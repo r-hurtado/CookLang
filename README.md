@@ -1,6 +1,6 @@
-# cook.lang — A Simple Recipe DSL Compiler
+# A Simple Cooklang Recipe to SQL Compiler
 
-A domain-specific language (and toolchain) for writing structured recipes in a clean, readable format. The compiler parses `.cook` files, lints for errors, and generates SQL INSERT statements for storing recipes in a relational database.
+The compiler parses `.cook` files, lints for errors, and generates SQL INSERT statements for storing recipes in a relational database.
 
 ## Why This Project?
 
@@ -25,8 +25,8 @@ Inspired by classic compiler courses, but in modern Node.js.
 
 ```bash
 git clone https://github.com/r-hurtado/CookLang.git
-cd cook-lang
+cd CookLang
 npm install
+```
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
