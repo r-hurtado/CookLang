@@ -20,4 +20,16 @@ describe('Lexer', () => {
       { type: TokenType.EOF, value: null, line: 2, col: 5 }
     ]);
   });
+
+  test('tokenizes simple header', () => {
+    const input = 'recipe "Test Recipe"\nservings 24';
+    expect(tokenize(input)).toEqual([
+      { type: 'RECIPE', value: 'recipe', line: 1, col: 1 },
+      { type: 'STRING', value: 'Test Recipe', line: 1, col: 8 },
+      //{ type: 'NEWLINE', ... },  // If you tokenize them
+      { type: 'SERVINGS', value: 'servings', line: 2, col: 1 },
+      { type: 'NUMBER', value: 24, line: 2, col: 10 },
+      { type: 'EOF', value: null, line: 2, col: 12 }
+    ]);
+  });
 });
