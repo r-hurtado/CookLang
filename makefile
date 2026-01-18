@@ -5,7 +5,7 @@ ExampleDir := /mnt/c/Users/mieca/CookLang/examples
 test:
 	npm test
 
-watch:
+watch: clearlog
 	npm run test:watch
 
 testrun:
@@ -24,3 +24,5 @@ example:
 clean:
 	rm -rf coverage
 
+clearlog:
+	rm debug.log
