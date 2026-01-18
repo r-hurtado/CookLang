@@ -15,8 +15,8 @@ const TokenType = {
   IDENTIFIER: 'IDENTIFIER', // For units like "cups" or qualifiers "packed"
 
   // Punctuation
-  LBRACE: '{',
-  RBRACE: '}',
+  LBRACE: 'LBRACE',
+  RBRACE: 'RBRACE',
   NEWLINE: 'NEWLINE',    // Or handle implicitly
   EOF: 'EOF',
 

@@ -2,8 +2,8 @@ const { tokenize } = require('../src/lexer');
 const { TokenType } = require('../src/token');
 const { clearDebugLog } = require('../src/utils');
 
-beforeEach(() => {
-  //clearDebugLog();
+beforeAll(() => {
+  clearDebugLog();
 });
 
 describe('Lexer', () => {
@@ -30,6 +30,17 @@ describe('Lexer', () => {
       { type: 'SERVINGS', value: 'servings', line: 2, col: 1 },
       { type: 'NUMBER', value: 24, line: 2, col: 10 },
       { type: 'EOF', value: null, line: 2, col: 12 }
+    ]);
+  });
+
+  test('tokenizes braces', () => {
+    const input = '{}()';
+    expect(tokenize(input)).toEqual([
+      { type: 'LBRACE', value: '{', line: 1, col: 1 },
+      { type: 'RBRACE', value: '}', line: 1, col: 2 },
+      { type: 'LBRACE', value: '(', line: 1, col: 3 },
+      { type: 'RBRACE', value: ')', line: 1, col: 4 },
+      { type: 'EOF', value: null, line: 1, col: 5 }
     ]);
   });
 });

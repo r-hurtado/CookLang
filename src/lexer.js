@@ -79,7 +79,13 @@ class Lexer {
     } else if ('{}()'.includes(char)) {
       // Simple punctuation
       token = {
-        type: char === '{' ? TokenType.LBRACE : TokenType.RBRACE,  // Add more as needed
+        //type: char === '{' ? TokenType.LBRACE : TokenType.RBRACE,  // Add more as needed
+        type: {
+          '{': TokenType.LBRACE,
+          '}': TokenType.RBRACE,
+          '(': TokenType.LBRACE,
+          ')': TokenType.RBRACE,
+        }[char],
         value: char,
         line: startLine,
         col: startCol
@@ -91,6 +97,7 @@ class Lexer {
       this.advance();
     } else {
       // Unimplemented — clear error to guide development
+      debugLog(`Unexpected character '${char}' at line ${startLine}, column ${startCol}`);
       throw new Error(`Unexpected character '${char}' at line ${startLine}, column ${startCol}`);
     }
 
