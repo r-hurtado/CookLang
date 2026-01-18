@@ -12,7 +12,7 @@ Inspired by classic compiler courses, but in modern Node.js.
 
 ## Features (Planned / Implemented)
 
-- [ ] CLI to read .cook files
+- [X] CLI to read .cook files
 - [ ] Lexer/tokenizer
 - [ ] Recursive-descent parser → AST
 - [ ] Basic linter (required fields, etc.)
